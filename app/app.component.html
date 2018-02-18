@@ -1,0 +1,8 @@
+<ActionBar title="Eldorado" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" text="Back to ActionBar" (tap)="goBack()"></NavigationButton>
+    <ActionItem [nsRouterLink]="['/login']">
+        <Button text="Login" class="action-item"></Button>
+    </ActionItem>
+</ActionBar>
+
+<page-router-outlet></page-router-outlet>
