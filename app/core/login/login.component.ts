@@ -10,6 +10,10 @@ import { Component } from "@angular/core";
 
 export class ELDLoginComponent {
 
+    constructor(){
+        console.log('welcome in the login component');
+    }
+
     private user = {
         email: '',
         password: ''

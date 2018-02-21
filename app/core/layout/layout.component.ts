@@ -21,6 +21,9 @@ export class ELDLayoutComponent {
   public countries: Array<Country>;
 
     constructor() {
+
+        console.log('welcome to the list component');
+
         this.countries = [];
 
         for (let i = 0; i < europianCountries.length; i++) {
