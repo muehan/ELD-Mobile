@@ -9,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ELDInfoComponent implements OnInit {
-    constructor() { }
+    constructor() {
+        console.log('welcome to the info component');
+     }
 
     ngOnInit() { }
 }
