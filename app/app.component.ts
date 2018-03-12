@@ -19,7 +19,3 @@ export class AppComponent {
  }
 
 }
-
-export function onInformation(args: observable.EventData) {
-  console.log("Delete action item tapped.");
-}
