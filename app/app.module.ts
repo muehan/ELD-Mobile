@@ -9,6 +9,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { AppComponent } from "./app.component";
 import { ELDLayoutComponent } from "./core/layout/layout.component";
 import { ELDLoginComponent } from './core/login/login.component';
+import { ELDInfoComponent } from "./core/info";
+
 
 // files
 import { routes } from "./app.routing";
@@ -18,6 +20,7 @@ import { routes } from "./app.routing";
     AppComponent,
     ELDLayoutComponent,
     ELDLoginComponent,
+    ELDInfoComponent
   ],
 
   bootstrap: [AppComponent],
