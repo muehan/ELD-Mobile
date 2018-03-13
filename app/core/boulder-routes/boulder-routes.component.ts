@@ -10,14 +10,14 @@ let europianCountries = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", 
     "Slovenia", "Spain", "Sweden", "United Kingdom"];
 
 @Component({
-  selector: "eld-layout",
-  templateUrl: './core/layout/layout.component.html',
+  selector: "eld-boulder-routes",
+  templateUrl: './core/boulder-routes/boulder-routes.component.html',
   styleUrls: [
-    './core/layout/layout.component.scss'
+    './core/boulder-routes/boulder-routes.component.scss'
    ]
 })
 
-export class ELDLayoutComponent {
+export class ELDBoulderRoutesComponent {
   public countries: Array<Country>;
 
     constructor() {

@@ -7,9 +7,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 // components
 import { AppComponent } from "./app.component";
-import { ELDLayoutComponent } from "./core/layout/layout.component";
+import { ELDBoulderRoutesComponent } from "./core/boulder-routes/boulder-routes.component";
 import { ELDLoginComponent } from './core/login/login.component';
 import { ELDInfoComponent } from "./core/info";
+import { ELDDetailsComponent } from './core/details';
 
 
 // files
@@ -18,9 +19,10 @@ import { routes } from "./app.routing";
 @NgModule({
   declarations: [
     AppComponent,
-    ELDLayoutComponent,
+    ELDBoulderRoutesComponent,
     ELDLoginComponent,
-    ELDInfoComponent
+    ELDInfoComponent,
+    ELDDetailsComponent
   ],
 
   bootstrap: [AppComponent],
