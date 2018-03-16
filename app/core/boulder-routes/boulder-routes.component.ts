@@ -1,13 +1,9 @@
 import { Component } from "@angular/core";
-
-class Country {
-  constructor(public name: string) { }
-}
-
-let europianCountries = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic",
-    "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy",
-    "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
-    "Slovenia", "Spain", "Sweden", "United Kingdom"];
+import { Observable } from "rxjs/Observable";
+import { RouteDetails } from "../../models";
+import { Store } from "@ngrx/store";
+import { RoutesState } from "../../store/routes/routes.state";
+import * as routesActions from '../../store/routes/actions';
 
 @Component({
   selector: "eld-boulder-routes",
@@ -18,17 +14,14 @@ let europianCountries = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", 
 })
 
 export class ELDBoulderRoutesComponent {
-  public countries: Array<Country>;
+  
+    public routes$: Observable<RouteDetails[]>;
 
-    constructor() {
-
-        console.log('welcome to the list component');
-
-        this.countries = [];
-
-        for (let i = 0; i < europianCountries.length; i++) {
-            this.countries.push(new Country(europianCountries[i]));
-        }
+    constructor(
+        private store: Store<RoutesState>
+    ) {
+        this.store.dispatch(new routesActions.LoadRoutesAction());
+        this.routes$ = this.store.select(x => x.routes);
     }
 
     public onItemTap(args) {

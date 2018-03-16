@@ -12,9 +12,18 @@ import { ELDLoginComponent } from './core/login/login.component';
 import { ELDInfoComponent } from "./core/info";
 import { ELDDetailsComponent } from './core/details';
 
-
 // files
 import { routes } from "./app.routing";
+
+// store
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { routesReducer } from "./store/routes/reducers";
+import { RoutesEffects } from "./store/routes/effects/routes.effects";
+
+// services
+import { RoutesService } from "./servcies";
 
 @NgModule({
   declarations: [
@@ -22,7 +31,7 @@ import { routes } from "./app.routing";
     ELDBoulderRoutesComponent,
     ELDLoginComponent,
     ELDInfoComponent,
-    ELDDetailsComponent
+    ELDDetailsComponent,
   ],
 
   bootstrap: [AppComponent],
@@ -31,7 +40,14 @@ import { routes } from "./app.routing";
     NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
-    NativeScriptRouterModule.forRoot(routes)
+    NativeScriptRouterModule.forRoot(routes),
+    StoreModule.forRoot({routes: routesReducer}),
+    EffectsModule.forRoot([RoutesEffects]),
+    StoreDevtoolsModule.instrument(),
+  ],
+
+  providers: [
+    RoutesService,
   ],
   
   schemas: [NO_ERRORS_SCHEMA],
