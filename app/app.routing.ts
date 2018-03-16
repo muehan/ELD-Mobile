@@ -8,7 +8,7 @@ export const routes = [
     { path: "list", component:  ELDBoulderRoutesComponent},
     { path: "login", component: ELDLoginComponent },
     { path: "info", component: ELDInfoComponent },
-    { path: "details", component: ELDDetailsComponent }
+    { path: "details/:id", component: ELDDetailsComponent }
 ];
 
 export const navigatableComponents = [

@@ -6,6 +6,9 @@ export function routesReducer(state = [], action: routesActions.RoutesActions){
         case routesActions.LOAD_ROUTES_SUCCESS: {
             return action.payload;
         }
+        case routesActions.LOAD_ROUTEDETAILS_SUCCESS: {
+            return action.payload;
+        }
         default: {
             return state;
         }

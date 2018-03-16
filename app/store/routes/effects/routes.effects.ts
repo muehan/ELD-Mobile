@@ -21,4 +21,11 @@ export class RoutesEffects {
         .switchMap(() => this.routesService.loadAllRoutes()
             .map(routes => (new RoutesActions.LoadRoutesSuccessAction(routes)))
         );
+
+    @Effect()
+    loadRouteDetails$ = this.actions$
+        .ofType(RoutesActions.LOAD_ROUTEDETAILS)
+        .switchMap((action: RoutesActions.LoadRouteDetails) => this.routesService.loadDetailedRoute(action.id)
+            .map(route => (new RoutesActions.LoadRouteDetailsSuccess(route)))
+    );
 }

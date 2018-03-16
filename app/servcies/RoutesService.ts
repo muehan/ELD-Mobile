@@ -1,39 +1,56 @@
 
 import { Observable } from 'rxjs/Observable';
-import { RouteListItem } from '../models';
+import { RouteListItem, RouteDetails } from '../models';
 
 import 'rxjs/add/observable/of';
 
 export class RoutesService {
 
-    loadAllRoutes(): Observable<RouteListItem[]> {
-        let routes: RouteListItem[] = [
-            {
-                id: '1',
-                name: 'Tschifeler',
-                difficutly: 'B2',
-                position: 'Höhle Links',
-            },
-            {
-                id: '2',
-                name: 'Hauruck',
-                difficutly: 'B2',
-                position: 'Höhle Links',
-            },
-            {
-                id: '3',
-                name: 'Muckibude',
-                difficutly: 'B2',
-                position: 'Höhle rechts',
-            },
-            {
-                id: '4',
-                name: 'yamyam',
-                difficutly: 'B3',
-                position: 'Überhängend',
-            },
-        ]
+    private routes: RouteDetails[] = [
+        {
+            id: '1',
+            name: 'Tschifeler',
+            difficutly: 'B2',
+            position: 'Höhle Links',
+            remark: 'ohne Struktur',
+            createdAt: new Date(),
+            createdBy: 'Master Builder'
+        },
+        {
+            id: '2',
+            name: 'Hauruck',
+            difficutly: 'B2',
+            position: 'Höhle Links',
+            remark: 'ohne Struktur',
+            createdAt: new Date(),
+            createdBy: 'Master Builder'
+        },
+        {
+            id: '3',
+            name: 'Muckibude',
+            difficutly: 'B2',
+            position: 'Höhle rechts',
+            remark: 'ohne Struktur',
+            createdAt: new Date(),
+            createdBy: 'Master Builder'
+        },
+        {
+            id: '4',
+            name: 'yamyam',
+            difficutly: 'B3',
+            position: 'Überhängend',
+            remark: 'ohne Struktur',
+            createdAt: new Date(),
+            createdBy: 'Master Builder'
+        },
+    ]
 
-        return Observable.of(routes);
+    loadAllRoutes(): Observable<RouteListItem[]> {
+        return Observable.of(this.routes);
+    }
+
+    loadDetailedRoute(id: string): Observable<RouteDetails> {
+        console.log(`load route with id: ${id}`);
+        return Observable.of(this.routes.filter(x => x.id === id)[0]);
     }
 }

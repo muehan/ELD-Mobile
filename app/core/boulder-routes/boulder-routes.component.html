@@ -1,6 +1,6 @@
-<ListView [items]="routes$ | async" [nsRouterLink]="['/details']" (itemTap)="onItemTap($event)" class="list-group">
+<ListView [items]="routes$ | async" (itemTap)="onItemTap($event)" class="list-group">
     <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-        <GridLayout class="list-group-item">
+        <GridLayout [nsRouterLink]="['/details', item.id]" class="list-group-item">
             <Label [text]="item.name"></Label>
             <Label [text]="item.difficutly" class="left"></Label>
         </GridLayout>
