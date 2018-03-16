@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { RouteDetails } from "../../models";
+import { RouteListItem } from "../../models";
 import { Store } from "@ngrx/store";
 import { RoutesState } from "../../store/routes/routes.state";
 import * as routesActions from '../../store/routes/actions';
@@ -15,7 +15,7 @@ import * as routesActions from '../../store/routes/actions';
 
 export class ELDBoulderRoutesComponent {
   
-    public routes$: Observable<RouteDetails[]>;
+    public routes$: Observable<RouteListItem[]>;
 
     constructor(
         private store: Store<RoutesState>

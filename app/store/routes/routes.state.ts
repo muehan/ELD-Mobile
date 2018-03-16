@@ -1,5 +1,5 @@
-import { RouteDetails } from '../../models';
+import { RouteListItem } from '../../models';
 
 export interface RoutesState {
-    routes: RouteDetails[];
+    routes: RouteListItem[];
 }

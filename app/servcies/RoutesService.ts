@@ -1,13 +1,13 @@
 
 import { Observable } from 'rxjs/Observable';
-import { RouteDetails } from '../models';
+import { RouteListItem } from '../models';
 
 import 'rxjs/add/observable/of';
 
 export class RoutesService {
 
-    loadAllRoutes(): Observable<RouteDetails[]> {
-        let routes: RouteDetails[] = [
+    loadAllRoutes(): Observable<RouteListItem[]> {
+        let routes: RouteListItem[] = [
             {
                 id: '1',
                 name: 'Tschifeler',

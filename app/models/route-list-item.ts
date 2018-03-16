@@ -1,4 +1,4 @@
-export class RouteDetails {
+export class RouteListItem {
     id: string;
     name: string;
     difficutly: string;
