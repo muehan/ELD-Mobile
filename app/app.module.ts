@@ -7,10 +7,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 // components
 import { AppComponent } from "./app.component";
-import { ELDBoulderRoutesComponent } from "./core/boulder-routes/boulder-routes.component";
-import { ELDLoginComponent } from './core/login/login.component';
-import { ELDInfoComponent } from "./core/info";
-import { ELDDetailsComponent } from './core/details';
+import { ELDBoulderRoutesComponent } from "./component/boulder-routes/boulder-routes.component";
+import { ELDLoginComponent } from './component/login/login.component';
+import { ELDInfoComponent } from "./component/info";
+import { ELDDetailsComponent } from './component/details';
 
 // files
 import { routes } from "./app.routing";

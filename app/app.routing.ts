@@ -1,7 +1,7 @@
-import { ELDBoulderRoutesComponent } from "./core/boulder-routes/boulder-routes.component";
-import { ELDLoginComponent } from "./core/login";
-import { ELDInfoComponent } from './core/info';
-import { ELDDetailsComponent } from './core/details';
+import { ELDBoulderRoutesComponent } from "./component/boulder-routes/boulder-routes.component";
+import { ELDLoginComponent } from "./component/login";
+import { ELDInfoComponent } from './component/info';
+import { ELDDetailsComponent } from './component/details';
 
 export const routes = [
     { path: "", redirectTo: "/list", pathMatch: "full" },
