@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { RouteListItem } from "../../models";
-import { Store } from "@ngrx/store";
+import { Store, select } from "@ngrx/store";
 import { RoutesState } from "../../store/routes/routes.state";
 import * as routesActions from '../../store/routes/actions';
+import * as fromRoutes from '../../store/routes/reducers';
 
 @Component({
   selector: "eld-boulder-routes",
@@ -21,7 +22,7 @@ export class ELDBoulderRoutesComponent {
         private store: Store<RoutesState>
     ) {
         this.store.dispatch(new routesActions.LoadRoutesAction());
-        this.routes$ = this.store.select(x => x.routes);
+        this.routes$ = this.store.pipe(select(fromRoutes.getRoutesEntitiesState));
     }
 
     public onItemTap(args) {

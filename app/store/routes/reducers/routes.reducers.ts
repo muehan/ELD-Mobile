@@ -1,13 +1,27 @@
 import * as routesActions from './../actions';
+import { RoutesState } from '..';
 
-export function routesReducer(state = [], action: routesActions.RoutesActions){
+const initialState: RoutesState = {
+    routes: [],
+    currentRoute: undefined
+};
 
-    switch(action.type){
+export function routesReducer(
+    state: RoutesState = initialState,
+    action: routesActions.RoutesActions) {
+
+    switch (action.type) {
         case routesActions.LOAD_ROUTES_SUCCESS: {
-            return action.payload;
+            return {
+                ...state,
+                routes: action.payload
+            }
         }
         case routesActions.LOAD_ROUTEDETAILS_SUCCESS: {
-            return action.payload;
+            return {
+                ...state,
+                currentRoute: action.payload
+            }
         }
         default: {
             return state;

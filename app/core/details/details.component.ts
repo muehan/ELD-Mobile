@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { RoutesState } from '../../store/routes';
 import * as routesActions from '../../store/routes/actions';
+import * as fromRoutes from '../../store/routes/reducers';
 import { Observable } from "rxjs/Observable";
 import { RouteDetails } from '../../models';
 
@@ -28,11 +29,7 @@ export class ELDDetailsComponent implements OnInit {
         this.route.params.subscribe(params => {
            this.id = params['id'];
            this.store.dispatch(new routesActions.LoadRouteDetails(this.id));
-           this.route$ = this.store.select(x => x.currentRoute);
-
-           this.route$.subscribe(route => {
-               console.log(route);
-           })
+           this.route$ = this.store.pipe(select(fromRoutes.getSelectedRouteState));
         });
       }
 }
