@@ -24,7 +24,7 @@ export class RoutesService {
             createdAt: new Date(),
             createdBy: 'Master Builder',
             picturePaths: [
-                "../../images/boulder-image.jpg"
+                '~/images/boulderImage.jpg'
             ]
         },
         {
@@ -36,7 +36,7 @@ export class RoutesService {
             createdAt: new Date(),
             createdBy: 'Master Builder',
             picturePaths: [
-                "~/app/images/boulder-image.jpg"
+                "~/images/boulderImage.jpg"
             ]
         },
         {
@@ -48,7 +48,7 @@ export class RoutesService {
             createdAt: new Date(),
             createdBy: 'Master Builder',
             picturePaths: [
-                "~/app/images/boulder-image.jpg"
+                "~/images/boulderImage.jpg"
             ]
         },
         {
@@ -60,7 +60,7 @@ export class RoutesService {
             createdAt: new Date(),
             createdBy: 'Master Builder',
             picturePaths: [
-                "~/app/images/boulder-image.jpg"
+                "~/images/boulderImage.jpg"
             ]
         },
     ]

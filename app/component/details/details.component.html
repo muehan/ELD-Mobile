@@ -31,13 +31,8 @@
             <Label [text]="route.remark" padding="10" width="50%" class="right" textWrap="true"></Label>
         </StackLayout>
 
-        <StackLayout orientation="horizontal">
-            <Label [text]="route.picturePaths[0]" padding="10" width="50%" textWrap="true"></Label>
-        </StackLayout>
-
-        <StackLayout *ngFor="let path of route.picturePaths">
-            <Lable [text]="path"></Lable>
-            <Image [src]="path"></Image>
+        <StackLayout width="100%" *ngFor="let path of route.picturePaths">
+            <Image src="~/images/boulderImage.jpg"></Image>
         </StackLayout>
 
     </StackLayout>
