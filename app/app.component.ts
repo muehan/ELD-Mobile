@@ -12,10 +12,4 @@ import { EventData, Observable } from "data/observable";
 export class AppComponent {
 
   constructor(private routerExtensions: RouterExtensions) { }
-
-  public goBack() {
-    console.log('hit the back button');
-    this.routerExtensions.backToPreviousPage();
- }
-
 }

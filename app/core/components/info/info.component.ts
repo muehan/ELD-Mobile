@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'eld-info',
-    templateUrl: './component/info/info.component.html',
+    templateUrl: './core/component/info/info.component.html',
     styleUrls: [
-        './component/info/info.component.scss'
+        './core/component/info/info.component.scss'
     ]
 })
 

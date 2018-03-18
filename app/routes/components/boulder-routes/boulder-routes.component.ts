@@ -1,17 +1,17 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { RouteListItem } from "../../models";
+import { RouteListItem } from "../../../models";
 import { Store, select } from "@ngrx/store";
-import { RoutesState } from "../../store/routes/routes.state";
-import * as routesActions from '../../store/routes/actions';
-import * as fromRoutes from '../../store/routes/reducers';
+import { RoutesState } from "../../../store/routes/routes.state";
+import * as routesActions from '../../../store/routes/actions';
+import * as fromRoutes from '../../../store/routes/reducers';
 import { forEach } from "@angular/router/src/utils/collection";
 
 @Component({
   selector: "eld-boulder-routes",
-  templateUrl: './component/boulder-routes/boulder-routes.component.html',
+  templateUrl: './core/component/boulder-routes/boulder-routes.component.html',
   styleUrls: [
-    './component/boulder-routes/boulder-routes.component.scss'
+    './core/component/boulder-routes/boulder-routes.component.scss'
    ]
 })
 

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { RoutesState } from '../../store/routes';
-import * as routesActions from '../../store/routes/actions';
-import * as fromRoutes from '../../store/routes/reducers';
+import { RoutesState } from '../../../store/routes';
+import * as routesActions from '../../../store/routes/actions';
+import * as fromRoutes from '../../../store/routes/reducers';
 import { Observable } from "rxjs/Observable";
-import { RouteDetails } from '../../models';
+import { RouteDetails } from '../../../models';
 
 @Component({
     selector: 'eld-details',
-    templateUrl: './component/details/details.component.html',
+    templateUrl: './core/component/details/details.component.html',
     styleUrls: [
-        './component/details/details.component.scss'
+        './core/component/details/details.component.scss'
     ]
 })
 
