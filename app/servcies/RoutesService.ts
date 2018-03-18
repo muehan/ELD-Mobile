@@ -22,7 +22,10 @@ export class RoutesService {
             position: 'Höhle Links',
             remark: 'ohne Struktur',
             createdAt: new Date(),
-            createdBy: 'Master Builder'
+            createdBy: 'Master Builder',
+            picturePaths: [
+                "../../images/boulder-image.jpg"
+            ]
         },
         {
             id: '2',
@@ -31,7 +34,10 @@ export class RoutesService {
             position: 'Höhle Links',
             remark: 'ohne Struktur',
             createdAt: new Date(),
-            createdBy: 'Master Builder'
+            createdBy: 'Master Builder',
+            picturePaths: [
+                "~/app/images/boulder-image.jpg"
+            ]
         },
         {
             id: '3',
@@ -40,7 +46,10 @@ export class RoutesService {
             position: 'Höhle rechts',
             remark: 'ohne Struktur',
             createdAt: new Date(),
-            createdBy: 'Master Builder'
+            createdBy: 'Master Builder',
+            picturePaths: [
+                "~/app/images/boulder-image.jpg"
+            ]
         },
         {
             id: '4',
@@ -49,7 +58,10 @@ export class RoutesService {
             position: 'Überhängend',
             remark: 'ohne Struktur',
             createdAt: new Date(),
-            createdBy: 'Master Builder'
+            createdBy: 'Master Builder',
+            picturePaths: [
+                "~/app/images/boulder-image.jpg"
+            ]
         },
     ]
 }

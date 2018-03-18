@@ -1,11 +1,44 @@
-<StackLayout>
-
+<Page>
     <StackLayout *ngIf="route$ | async; let route">
-        <Label [text]="Name" padding="10" backgroundColor="lightgray"></Label>
-        <Label [text]="Schwirigkeit" class="right" padding="10" backgroundColor="lightgray"></Label>
 
-        <!-- <Label [text]="route.name" textWrap="true" padding="10"></Label>
-        <Label [text]="route.difficutly" class="right" textWrap="true" padding="10"></Label> -->
+        <StackLayout class="title" orientation="horizontal">
+            <Label text="Name" padding="10" width="50%" backgroundColor="lightgray"></Label>
+            <Label text="Schwierigkeit" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+            <Label [text]="route.name" padding="10" width="50%" textWrap="true"></Label>
+            <Label [text]="route.difficutly" class="right" width="50%" textWrap="true" padding="10"></Label>
+        </StackLayout>
+
+        <StackLayout class="title" orientation="horizontal">
+            <Label text="Schrauber" padding="10" width="50%" backgroundColor="lightgray"></Label>
+            <Label text="Erstellt" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+            <Label [text]="route.createdBy" padding="10" width="50%" textWrap="true"></Label>
+            <Label [text]="route.createdAt | date:'MM/dd/yy'" class="right" width="50%" textWrap="true" padding="10"></Label>
+        </StackLayout>
+
+        <StackLayout class="title" orientation="horizontal">
+            <Label text="Ort" padding="10" width="50%" backgroundColor="lightgray"></Label>
+            <Label text="Bemerkung" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+            <Label [text]="route.position" padding="10" width="50%" textWrap="true"></Label>
+            <Label [text]="route.remark" padding="10" width="50%" class="right" textWrap="true"></Label>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+            <Label [text]="route.picturePaths[0]" padding="10" width="50%" textWrap="true"></Label>
+        </StackLayout>
+
+        <StackLayout *ngFor="let path of route.picturePaths">
+            <Lable [text]="path"></Lable>
+            <Image [src]="path"></Image>
+        </StackLayout>
+
     </StackLayout>
-
-</StackLayout>
+</Page>
