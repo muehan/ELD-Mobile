@@ -9,9 +9,9 @@ import { RouteDetails } from '../../models';
 
 @Component({
     selector: 'eld-details',
-    templateUrl: './core/details/details.component.html',
+    templateUrl: './component/details/details.component.html',
     styleUrls: [
-        './core/details/details.component.scss'
+        './component/details/details.component.scss'
     ]
 })
 
@@ -29,7 +29,8 @@ export class ELDDetailsComponent implements OnInit {
         this.route.params.subscribe(params => {
            this.id = params['id'];
            this.store.dispatch(new routesActions.LoadRouteDetails(this.id));
-           this.route$ = this.store.pipe(select(fromRoutes.getSelectedRouteState));
         });
+
+        this.route$ = this.store.pipe(select(fromRoutes.getSelectedRouteState));
       }
 }

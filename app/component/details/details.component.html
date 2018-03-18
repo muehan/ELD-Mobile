@@ -1,11 +1,11 @@
 <StackLayout>
 
     <StackLayout *ngIf="route$ | async; let route">
-        <Label text="Name" padding="10" backgroundColor="lightgray"></Label>
-        <Label [text]="route.name" textWrap="true" padding="10"></Label>
+        <Label [text]="Name" padding="10" backgroundColor="lightgray"></Label>
+        <Label [text]="Schwirigkeit" class="right" padding="10" backgroundColor="lightgray"></Label>
 
-        <Label text="Schwirigkeit" padding="10" backgroundColor="lightgray"></Label>
-        <Label [text]="route.difficutly" textWrap="true" padding="10"></Label>
+        <!-- <Label [text]="route.name" textWrap="true" padding="10"></Label>
+        <Label [text]="route.difficutly" class="right" textWrap="true" padding="10"></Label> -->
     </StackLayout>
 
 </StackLayout>

@@ -7,8 +7,6 @@ import { RoutesState } from '..';
 
 export * from './routes.reducers';
 
-export const getListofRoutes = (state: RoutesState) => state.routes;
-
 export const getRoutesState = createFeatureSelector<RoutesState>('routes');
 
 export const getRoutesEntitiesState = createSelector(

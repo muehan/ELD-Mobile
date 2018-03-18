@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'eld-login',
-    templateUrl: './core/login/login.component.html',
+    templateUrl: './component/login/login.component.html',
     styleUrls: [
-        './core/login/login.component.scss'
+        './component/login/login.component.scss'
     ]
 })
 

@@ -6,6 +6,14 @@ import 'rxjs/add/observable/of';
 
 export class RoutesService {
 
+    loadAllRoutes(): Observable<RouteListItem[]> {
+        return Observable.of(this.routes);
+    }
+
+    loadDetailedRoute(id: string): Observable<RouteDetails> {
+        return Observable.of(this.routes.filter(x => x.id === id)[0]);
+    }
+
     private routes: RouteDetails[] = [
         {
             id: '1',
@@ -44,13 +52,4 @@ export class RoutesService {
             createdBy: 'Master Builder'
         },
     ]
-
-    loadAllRoutes(): Observable<RouteListItem[]> {
-        return Observable.of(this.routes);
-    }
-
-    loadDetailedRoute(id: string): Observable<RouteDetails> {
-        console.log(`load route with id: ${id}`);
-        return Observable.of(this.routes.filter(x => x.id === id)[0]);
-    }
 }
