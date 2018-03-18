@@ -11,5 +11,5 @@ import { EventData, Observable } from "data/observable";
 })
 export class AppComponent {
 
-  constructor(private routerExtensions: RouterExtensions) { }
+  constructor() { }
 }
