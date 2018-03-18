@@ -7,11 +7,16 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 // components
 import { AppComponent } from "./app.component";
-import { ELDBoulderRoutesComponent } from "./component/boulder-routes/boulder-routes.component";
-import { ELDLoginComponent } from './component/login/login.component';
-import { ELDInfoComponent } from "./component/info";
-import { ELDDetailsComponent } from './component/details';
+import {
+  ELDLoginComponent,
+  ELDInfoComponent,
+  ELDMenuBarComponent,
+} from './core/components';
 
+import {
+  ELDDetailsComponent,
+  ELDBoulderRoutesComponent
+} from './routes/components';
 // files
 import { routes } from "./app.routing";
 
@@ -28,6 +33,7 @@ import { RoutesService } from "./servcies";
 @NgModule({
   declarations: [
     AppComponent,
+    ELDMenuBarComponent,
     ELDBoulderRoutesComponent,
     ELDLoginComponent,
     ELDInfoComponent,
@@ -41,7 +47,7 @@ import { RoutesService } from "./servcies";
     NativeScriptFormsModule,
     NativeScriptRouterModule,
     NativeScriptRouterModule.forRoot(routes),
-    StoreModule.forRoot({routes: routesReducer}),
+    StoreModule.forRoot({ routes: routesReducer }),
     EffectsModule.forRoot([RoutesEffects]),
     StoreDevtoolsModule.instrument(),
   ],
@@ -49,7 +55,7 @@ import { RoutesService } from "./servcies";
   providers: [
     RoutesService,
   ],
-  
+
   schemas: [NO_ERRORS_SCHEMA],
 })
 

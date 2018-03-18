@@ -9,9 +9,9 @@ import { RouteDetails } from '../../../models';
 
 @Component({
     selector: 'eld-details',
-    templateUrl: './core/component/details/details.component.html',
+    templateUrl: './routes/components/details/details.component.html',
     styleUrls: [
-        './core/component/details/details.component.scss'
+        './routes/components/details/details.component.scss'
     ]
 })
 
@@ -19,11 +19,17 @@ export class ELDDetailsComponent implements OnInit {
     
     private id: string;
     private route$: Observable<RouteDetails>;
+    
+    public difficultyRating: Array<number>;
+    public funRating: Array<number>;
 
     constructor(
         private route: ActivatedRoute,
         private store: Store<RoutesState>)
-        { }
+        {
+            this.difficultyRating = [ 0,1,2,3,4,5];
+            this.funRating = [0,1,2,3,4,5];
+        }
 
     ngOnInit() {
         this.route.params.subscribe(params => {

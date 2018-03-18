@@ -1,39 +1,44 @@
 <Page>
-    <StackLayout *ngIf="route$ | async; let route">
+    <ScrollView>
+        <StackLayout *ngIf="route$ | async; let route">
+            <StackLayout class="title" orientation="horizontal">
+                <Label text="Name" padding="10" width="50%" backgroundColor="lightgray"></Label>
+                <Label text="Schwierigkeit" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+            </StackLayout>
 
-        <StackLayout class="title" orientation="horizontal">
-            <Label text="Name" padding="10" width="50%" backgroundColor="lightgray"></Label>
-            <Label text="Schwierigkeit" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+            <StackLayout orientation="horizontal">
+                <Label [text]="route.name" padding="10" width="50%" textWrap="true"></Label>
+                <Label [text]="route.difficutly" class="right" width="50%" textWrap="true" padding="10"></Label>
+            </StackLayout>
+
+            <StackLayout class="title" orientation="horizontal">
+                <Label text="Schrauber" padding="10" width="50%" backgroundColor="lightgray"></Label>
+                <Label text="Erstellt" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+            </StackLayout>
+
+            <StackLayout orientation="horizontal">
+                <Label [text]="route.createdBy" padding="10" width="50%" textWrap="true"></Label>
+                <Label [text]="route.createdAt | date:'MM/dd/yy'" class="right" width="50%" textWrap="true" padding="10"></Label>
+            </StackLayout>
+
+            <StackLayout class="title" orientation="horizontal">
+                <Label text="Ort" padding="10" width="50%" backgroundColor="lightgray"></Label>
+                <Label text="Bemerkung" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
+            </StackLayout>
+
+            <StackLayout orientation="horizontal">
+                <Label [text]="route.position" padding="10" width="50%" textWrap="true"></Label>
+                <Label [text]="route.remark" padding="10" width="50%" class="right" textWrap="true"></Label>
+            </StackLayout>
+
+            <StackLayout class="rateList" orientation="horizontal">
+                <ListPicker [items]="difficultyRating" width="40%" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+                <ListPicker [items]="funRating" width="40%" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+            </StackLayout>
+
+            <StackLayout width="100%" *ngFor="let path of route.picturePaths">
+                <Image src="~/images/boulderImage.jpg"></Image>
+            </StackLayout>
         </StackLayout>
-
-        <StackLayout orientation="horizontal">
-            <Label [text]="route.name" padding="10" width="50%" textWrap="true"></Label>
-            <Label [text]="route.difficutly" class="right" width="50%" textWrap="true" padding="10"></Label>
-        </StackLayout>
-
-        <StackLayout class="title" orientation="horizontal">
-            <Label text="Schrauber" padding="10" width="50%" backgroundColor="lightgray"></Label>
-            <Label text="Erstellt" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal">
-            <Label [text]="route.createdBy" padding="10" width="50%" textWrap="true"></Label>
-            <Label [text]="route.createdAt | date:'MM/dd/yy'" class="right" width="50%" textWrap="true" padding="10"></Label>
-        </StackLayout>
-
-        <StackLayout class="title" orientation="horizontal">
-            <Label text="Ort" padding="10" width="50%" backgroundColor="lightgray"></Label>
-            <Label text="Bemerkung" padding="10" width="50%" class="right" backgroundColor="lightgray"></Label>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal">
-            <Label [text]="route.position" padding="10" width="50%" textWrap="true"></Label>
-            <Label [text]="route.remark" padding="10" width="50%" class="right" textWrap="true"></Label>
-        </StackLayout>
-
-        <StackLayout width="100%" *ngFor="let path of route.picturePaths">
-            <Image src="~/images/boulderImage.jpg"></Image>
-        </StackLayout>
-
-    </StackLayout>
+    </ScrollView>
 </Page>
