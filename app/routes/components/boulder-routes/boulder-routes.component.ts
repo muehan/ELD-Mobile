@@ -9,9 +9,9 @@ import { forEach } from "@angular/router/src/utils/collection";
 
 @Component({
   selector: "eld-boulder-routes",
-  templateUrl: './core/component/boulder-routes/boulder-routes.component.html',
+  templateUrl: './routes/components/boulder-routes/boulder-routes.component.html',
   styleUrls: [
-    './core/component/boulder-routes/boulder-routes.component.scss'
+    './routes/components/boulder-routes/boulder-routes.component.scss'
    ]
 })
 

@@ -3,13 +3,13 @@ import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
     selector: 'eld-menubar',
-    templateUrl: './core/component/menubar/menubar.component.html',
+    templateUrl: './core/components/menubar/menubar.component.html',
     styleUrls: [
-        './core/component/menubar/menubar.component.scss'
+        './core/components/menubar/menubar.component.scss'
     ]
 })
 
-export class MenuBarComponent implements OnInit {
+export class ELDMenuBarComponent implements OnInit {
     constructor(
         private routerExtensions: RouterExtensions) { }
 
