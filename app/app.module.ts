@@ -5,6 +5,13 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
+import firebase = require('nativescript-plugin-firebase');
+
+firebase
+  .init()
+  .then(() => console.log('firebase initialised'))
+  .catch(error => console.error(`Error: ${error}`));
+
 // components
 import { AppComponent } from "./app.component";
 import {

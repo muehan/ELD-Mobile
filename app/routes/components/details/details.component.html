@@ -30,11 +30,11 @@
                 <Label [text]="route.position" padding="10" width="50%" textWrap="true"></Label>
                 <Label [text]="route.remark" padding="10" width="50%" class="right" textWrap="true"></Label>
             </StackLayout>
-
+            <!-- 
             <StackLayout class="rateList" orientation="horizontal">
                 <ListPicker [items]="difficultyRating" width="40%" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
                 <ListPicker [items]="funRating" width="40%" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
-            </StackLayout>
+            </StackLayout> -->
 
             <StackLayout width="100%" *ngFor="let path of route.picturePaths">
                 <Image src="~/images/boulderImage.jpg"></Image>

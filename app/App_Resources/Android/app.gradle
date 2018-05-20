@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.HelloWorld" 
+    applicationId = "ch.eldorado.mobile" 
     
     //override supported platforms
     // ndk {
@@ -19,5 +19,8 @@ android {
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
-  }  
+  }
+  project.ext {
+    googlePlayServicesVersion = "15.0.0"
+  }
 } 
