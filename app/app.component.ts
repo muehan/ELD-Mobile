@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { RouterExtensions } from "nativescript-angular/router";
-import { EventData, Observable } from "data/observable";
 import firebase = require("nativescript-plugin-firebase");
 
 @Component({
@@ -18,6 +16,7 @@ export class AppComponent implements OnInit {
     firebase.init({
       // Optionally pass in properties for database, authentication and cloud messaging,
       // see their respective docs.
+      persist: true,
       
     }).then(
       instance => {
